@@ -1,0 +1,120 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #00fff2, #0091ff);
+    background-size: 200% 200%; /* Увеличена область градиента для анимации */
+    animation: gradientAnimation 10s ease infinite; /* Анимация градиента */
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0.5em 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #00fff2, #0091ff);
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+    line-height: 1.4;
+}
+
+.features {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.feature-box {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 250px; /* Ширина для квадратиков */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s; /* Добавлена анимация для эффектов */
+}
+
+.feature-box:hover {
+    transform: translateY(-5px); /* Подъем при наведении */
+}
+
+.feature-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Закругление изображений */
+}
+
+.download-btn {
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 1em;
+    width: auto; /* Убираем 100% ширину */
+    max-width: 400px;
+    background-color: #00ccff;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.download-btn:hover {
+    background-color: #0099cc;
+    transform: scale(1.05);
+}
+
+.download-btn:active {
+    transform: scale(0.95);
+}
+
+.additional-buttons {
+    margin-top: 20px;
+}
+
+.help-btn, .contact-btn {
+    padding: 10px;
+    font-size: 1em;
+    max-width: 200px;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 5px; /* Отступ между кнопками */
+}
+
+.help-btn:hover, .contact-btn:hover {
+    background-color: #005fa3;
+    transform: scale(1.05); /* Увеличение кнопок при наведении */
+}
+
+.help-btn:active, .contact-btn:active {
+    transform: scale(0.95); /* Уменьшение кнопок при нажатии */
+}
