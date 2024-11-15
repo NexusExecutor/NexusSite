@@ -1,120 +1,312 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #00fff2, #0091ff);
-    background-size: 200% 200%; /* Увеличена область градиента для анимации */
-    animation: gradientAnimation 10s ease infinite; /* Анимация градиента */
-    color: white;
-    text-align: center;
+/* Reset */
+* {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #000;
+    color: #f5f5f5;
+    overflow-x: hidden;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Header */
+header {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-h1 {
-    font-size: 3em;
-    margin: 0.5em 0;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: rgba(18, 18, 18, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    animation: slideIn 1s ease-out;
 }
 
 .logo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: linear-gradient(to right, #00fff2, #0091ff);
-    margin: 0 auto;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    animation: fadeIn 2s ease-in-out;
 }
 
-p {
-    font-size: 1.2em;
-    margin: 0.5em 0;
-    line-height: 1.4;
+.logo span {
+    color: #f5f5f5;
 }
 
-.features {
-    margin-top: 20px;
+nav ul {
     display: flex;
-    justify-content: space-around;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ccc;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 150px 20px;
+    background: linear-gradient(145deg, #000, #222);
+    color: white;
+    animation: slideUp 2s ease-out;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+.btn {
+    padding: 16px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid transparent;
+}
+
+.primary-btn {
+    background: white;
+    color: black;
+}
+
+.secondary-btn {
+    background: #111;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.secondary-btn:hover {
+    background: white;
+    color: black;
+    border: 2px solid black;
+}
+
+/* Features Section */
+#features {
+    text-align: center;
+    padding: 100px 10%;
+    background: linear-gradient(145deg, #222, #333);
+    animation: fadeInLeft 2s ease-out;
+}
+
+#features h2 {
+    font-size: 3rem;
+    margin-bottom: 50px;
+}
+
+.features-container {
+    display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 40px;
 }
 
-.feature-box {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 15px;
-    margin: 10px;
-    border-radius: 10px;
-    width: 250px; /* Ширина для квадратиков */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
-    transition: transform 0.3s; /* Добавлена анимация для эффектов */
-}
-
-.feature-box:hover {
-    transform: translateY(-5px); /* Подъем при наведении */
-}
-
-.feature-img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px; /* Закругление изображений */
-}
-
-.download-btn {
-    margin-top: 20px;
-    padding: 12px;
-    font-size: 1em;
-    width: auto; /* Убираем 100% ширину */
-    max-width: 400px;
-    background-color: #00ccff;
+.feature {
+    width: 300px;
+    padding: 30px;
+    background: black;
     color: white;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.download-btn:hover {
-    background-color: #0099cc;
+.feature:hover {
     transform: scale(1.05);
+    opacity: 0.9;
 }
 
-.download-btn:active {
-    transform: scale(0.95);
+/* Download Section */
+#download {
+    text-align: center;
+    padding: 100px 10%;
+    background: linear-gradient(145deg, #111, #222);
+    animation: fadeInRight 2s ease-out;
 }
 
-.additional-buttons {
-    margin-top: 20px;
+#download h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
 }
 
-.help-btn, .contact-btn {
-    padding: 10px;
-    font-size: 1em;
-    max-width: 200px;
-    background-color: #007acc;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    margin: 5px; /* Отступ между кнопками */
+#download p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
 }
 
-.help-btn:hover, .contact-btn:hover {
-    background-color: #005fa3;
-    transform: scale(1.05); /* Увеличение кнопок при наведении */
+/* Community Section */
+#community {
+    text-align: center;
+    padding: 100px 10%;
+    background: linear-gradient(145deg, #333, #444);
 }
 
-.help-btn:active, .contact-btn:active {
-    transform: scale(0.95); /* Уменьшение кнопок при нажатии */
+#community h2 {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+}
+
+#community p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+footer {
+    background: black;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.3rem;
+    }
+
+    .btn {
+        padding: 14px 30px;
+        font-size: 1rem;
+    }
+
+    .features-container {
+        gap: 20px;
+    }
+
+    .feature {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+
+    .features-container {
+        gap: 10px;
+    }
+
+    .feature {
+        width: 100%;
+    }
 }
